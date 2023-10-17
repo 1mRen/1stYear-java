@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @author mARC
  */
 public class calculator1 extends javax.swing.JFrame {
-
+    DecimalFormat format = new DecimalFormat("#.#");
     /**
      * Creates new form calculator1
      */
@@ -451,8 +451,9 @@ public class calculator1 extends javax.swing.JFrame {
         
         double nums = Double.parseDouble(String.valueOf(txtResult.getText()));
         nums = nums *(-1);
+        String z = format.format(nums);
+        txtResult.setText(String.valueOf(z));
         
-        txtResult.setText(String.valueOf(nums));
     }//GEN-LAST:event_buttonPMActionPerformed
 
     private void buttonBSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBSActionPerformed
@@ -476,24 +477,26 @@ public class calculator1 extends javax.swing.JFrame {
 
     private void buttonEqualsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonEqualsActionPerformed
         numEnter2 = Double.parseDouble(txtResult.getText());
-        DecimalFormat format = new DecimalFormat("0.#");
-        String z = format.format(res);
         
         switch(op){
             case "+":
                 res = numEnter1 + numEnter2;
+                String z = format.format(res);
                 txtResult.setText(String.valueOf(z));
                 break;
             case "-":
                 res = numEnter1 - numEnter2;
+                String z = format.format(res);
                 txtResult.setText(String.valueOf(z));
                 break;
             case "*":
                 res = numEnter1 * numEnter2;
+                String z = format.format(res);
                 txtResult.setText(String.valueOf(z));
                 break;
             case "/":
                 res = numEnter1 / numEnter2;
+                String z = format.format(res);
                 txtResult.setText(String.valueOf(z));
                 break;
         }
