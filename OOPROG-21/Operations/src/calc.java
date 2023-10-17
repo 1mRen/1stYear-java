@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
  * @author PF128
  */
 public class calc extends javax.swing.JFrame {
-    Static DecimalFormat format = new DecimalFormat("0.#"); 
+    DecimalFormat format = new DecimalFormat("#.#"); 
     /**
      * Creates new form calc
      */
@@ -181,45 +181,47 @@ public class calc extends javax.swing.JFrame {
     }//GEN-LAST:event_totalActionPerformed
 
     private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
-        int a, b, c;
-        
-        a = Integer.parseInt(num1.getText());
-        b = Integer.parseInt(num2.getText());
-        
-        c = a + b;
-        
-        total.setText(""+c);
-    }//GEN-LAST:event_addActionPerformed
-
-    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
-        int a, b, c;
-        
-        a = Integer.parseInt(num1.getText());
-        b = Integer.parseInt(num2.getText());
-        
-        c = a - b;
-        total.setText(""+c);
-    }//GEN-LAST:event_minusActionPerformed
-
-    private void timesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesActionPerformed
-        int a, b, c;
-        
-        a = Integer.parseInt(num1.getText());
-        b = Integer.parseInt(num2.getText());
-        
-        c = a * b;
-        total.setText(""+c);
-    }//GEN-LAST:event_timesActionPerformed
-
-    private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
-        double a, b, c;
+        double a, b;
         
         a = Double.parseDouble(num1.getText());
         b = Double.parseDouble(num2.getText());
         
-        c = a / b;
+        String z = format.format(a+b);
         
-        total.setText(""+c);
+        total.setText(""+z);
+    }//GEN-LAST:event_addActionPerformed
+
+    private void minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_minusActionPerformed
+        double a, b;
+        
+        a = Double.parseDouble(num1.getText());
+        b = Double.parseDouble(num2.getText());
+        
+        String z = format.format(a-b);
+        
+        total.setText(""+z);
+    }//GEN-LAST:event_minusActionPerformed
+
+    private void timesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timesActionPerformed
+         double a,b, c;
+        
+        a = Double.parseDouble(num1.getText());
+        b = Double.parseDouble(num2.getText());
+        
+        String z = format.format(a*b);
+        
+        total.setText(""+z);
+    }//GEN-LAST:event_timesActionPerformed
+
+    private void divideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divideActionPerformed
+        double a, b;
+        
+        a = Double.parseDouble(num1.getText());
+        b = Double.parseDouble(num2.getText());
+        
+        String z = format.format(a/b);
+        
+        total.setText(""+z);
     }//GEN-LAST:event_divideActionPerformed
 
     /**
